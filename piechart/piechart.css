@@ -1,0 +1,52 @@
+.chart-section {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 380px;
+  max-height: 380px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Centered total text inside the donut */
+.chart-total {
+  position: absolute;
+  top: 44%;
+  left: 50.2%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+  pointer-events: none;
+}
+
+#totalValue {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+}
+
+.total-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 3px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 576px) {
+  #totalValue {
+    font-size: 1.8rem;
+  }
+
+  .total-label {
+    font-size: 0.75rem;
+  }
+}

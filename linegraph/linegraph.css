@@ -1,0 +1,32 @@
+/* Demand Analysis Section */
+#demandAnalysis {
+  margin-top: 1rem;
+}
+
+#demandAnalysis h6 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.6rem;
+}
+
+.analysis-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fbf9;
+  border-radius: 6px;
+  padding: 0.55rem 0.8rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8125rem;
+}
+
+.analysis-label {
+  color: #222;
+  font-weight: 500;
+}
+
+.analysis-value {
+  color: #444;
+  font-weight: 600;
+}
