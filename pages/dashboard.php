@@ -2,7 +2,7 @@
         <div class="top-header pt-1 pb-3 mt-2">
           <h4 class="fw-bold">Hello, Clemm! 👋</h4>
           <p class="text-muted small mb-3 mb-md-4">What are you looking for today?</p>
-          <?php include '../components/filterBar.php'; ?>
+          <?php include '../../components/filterBar.php'; ?>
         </div>
 
         <!-- Charts Row -->

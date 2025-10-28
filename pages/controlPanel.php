@@ -11,6 +11,8 @@
     </div>
 </div>
 
+
+
 <!-- Add Appliance Modal -->
 <div class="modal fade" id="addAppliance" tabindex="-1" aria-labelledby="AddAppliance" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
