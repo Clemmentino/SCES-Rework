@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../../piechart/piechart.css">
   <link rel="stylesheet" href="../../linegraph/linegraph.css">
 
+
   <!-- Scripts -->
   <script src="../../scripts/dashboard.js" defer></script>
   <script src="../../scripts/accountPanel.js" defer></script>

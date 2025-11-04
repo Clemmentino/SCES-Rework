@@ -17,7 +17,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="../../styles/global.css">
-  <link rel="stylesheet" href="../../styles/usersPanel.css">
+  <link rel="stylesheet" href="../../styles/users.css">
 
   <!-- Scripts -->
   <script src="../../scripts/sidebar.js" defer></script>
@@ -31,175 +31,193 @@
 
   <!-- Main Content -->
   <div class="main-content" id="main-content">
-    <div class="container-fluid px-md-2">
+    <div class="container-fluid">
       <div class="card-section active" id="controlPanel">
-<div class="mt-3">
-    <div class="d-flex align-items-center position-relative">
-        <div class="">
-            <h4 class="mb-0 fw-bold">Users Panel</h4>
-        </div>
-        <!-- Button trigger modal -->
-        <div class="ms-auto">
-            <button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#addUser">
-                <span>Add New User</span>
+        <!-- Header Section -->
+          <div class="panel-header">
+            <div class="header-content">
+              <h4 class="panel-title">Users Panel</h4>
+              <p class="panel-subtitle">Monitor and manage all appliances across buildings</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUser">
+              <i class="bi bi-plus-circle"></i>
+              <span>Add New User</span>
             </button>
-        </div>
-    </div>
-    <!-- MAIN -->
-    <div class="card p-3 shadow-sm rounded-2 mt-4">
-        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-            <form action="#" class="col-md-6 col-12 mb-0 p-0" style="max-width:520px;">
-                <div class="input-group">
-                    <input type="text" id="search" class="form-control" placeholder="Search user...">
-                    <button class="btn btn-success" type="button">Search</button>
-                </div>
+          </div>
+
+        <div class="panel-wrapper">
+          <!-- Search Section -->
+          <div class="search-wrapper">
+            <form action="#" class="search-form">
+              <div class="input-group">
+                <input type="text" id="search" class="form-control" placeholder="Search user...">
+                <button class="btn btn-search" type="button">
+                  <i class="bi bi-search"></i>
+                  <span class="d-none d-sm-inline">Search</span>
+                </button>
+              </div>
             </form>
+          </div>
+
+          <!-- Table Section -->
+          <div class="table-wrapper">
+            <table class="table users-table">
+              <thead>
+                <tr>
+                  <th scope="col">User ID</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Date Created</th>
+                  <th scope="col">Permission</th>
+                  <th scope="col">Status</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="User ID">1</td>
+                  <td data-label="Username">mark</td>
+                  <td data-label="Name">Mark Jhon</td>
+                  <td data-label="Role">Admin</td>
+                  <td data-label="Date Created">10/01/25</td>
+                  <td data-label="Permission">Full</td>
+                  <td data-label="Status">
+                    <span class="status-badge status-active">Active</span>
+                  </td>
+                  <td data-label="Action">
+                    <button class="btn btn-action" type="button" data-bs-toggle="modal" data-bs-target="#editUser">
+                      <i class="bi bi-pencil"></i>
+                      <span>Edit</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User ID">2</td>
+                  <td data-label="Username">jacob</td>
+                  <td data-label="Name">Jacob Graham</td>
+                  <td data-label="Role">Staff</td>
+                  <td data-label="Date Created">10/01/25</td>
+                  <td data-label="Permission">Read, Write, Update</td>
+                  <td data-label="Status">
+                    <span class="status-badge status-inactive">Inactive</span>
+                  </td>
+                  <td data-label="Action">
+                    <button class="btn btn-action" type="button" data-bs-toggle="modal" data-bs-target="#editUser">
+                      <i class="bi bi-pencil"></i>
+                      <span>Edit</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User ID">3</td>
+                  <td data-label="Username">john</td>
+                  <td data-label="Name">John Loide Cruz</td>
+                  <td data-label="Role">Technician</td>
+                  <td data-label="Date Created">10/01/25</td>
+                  <td data-label="Permission">Read, Update</td>
+                  <td data-label="Status">
+                    <span class="status-badge status-active">Active</span>
+                  </td>
+                  <td data-label="Action">
+                    <button class="btn btn-action" type="button" data-bs-toggle="modal" data-bs-target="#editUser">
+                      <i class="bi bi-pencil"></i>
+                      <span>Edit</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-    </div>
-    <div class="card p-2 rounded-3 mb-0 shadow-sm">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col" class="col-2 ps-3">User ID</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Date created</th>
-                    <th scope="col">Permission</th>
-                    <th scope="col">Status</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="">
-                    <th scope="row" class="ps-3">1</th>
-                    <td>mark</td>
-                    <td>Mark Jhon</td>
-                    <td>Admin</td>
-                    <td>10/01/25</td>
-                    <td>Full</td>
-                    <td><label for="" class="activeStatus">Active</label></td>
-                    <td class="pe-5"><button class="btn btn-outline-success float-end" type="button"
-                            data-bs-toggle="modal" data-bs-target="#editUser">Edit</button></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ps-3">2</th>
-                    <td>jacob</td>
-                    <td>Jacob Graham</td>
-                    <td>Staff</td>
-                    <td>10/01/25</td>
-                    <td>Read, Write, Update</td>
-                    <td><label for="" class="inactiveStatus">Inactive</label></td>
-                    <td class="pe-5"><button class="btn btn-outline-success float-end" type="button"
-                            data-bs-toggle="modal" data-bs-target="#editUser">Edit</button></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ps-3">3</th>
-                    <td>john</td>
-                    <td>John Loide Cruz</td>
-                    <td>Technician</td>
-                    <td>10/01/25</td>
-                    <td>Read, Update</td>
-                    <td><label for="" class="activeStatus">Active</label></td>
-                    <td class="pe-5"><button class="btn btn-outline-success float-end" type="button"
-                            data-bs-toggle="modal" data-bs-target="#editUser">Edit</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-<!-- ADD USERS -->
-<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="viewDetailsLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5 fw-semibold" id="viewDetailsLabel">Add User</h1>
+
+        <!-- ADD USER MODAL -->
+        <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="addUserLabel">Add User</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body pe-2">
-                <form class="row g-3">
-                    <div>
-                        <label for="Name">Username <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" required>
-                    </div>
-                    <div>
-                        <label for="Name">Password <span class="text-danger">*</span></label>
-                        <input type="password" class="form-control" required>
-                    </div>
-                    <div>
-                        <label for="Name">Confirm password <span class="text-danger">*</span></label>
-                        <input type="password" class="form-control" required>
-                    </div>
-                    <div>
-                        <label for="Name">Name <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" required>
-                    </div>
-                    <div>
-                        <label for="Name">Role <span class="text-danger">*</span></label>
-                        <select class="form-select" aria-label="Default select example">
-                            
-                            <option value="1">Admin</option>
-                            <option value="2">Staff</option>
-                            <option value="3">Technician</option>
-                        </select>
-                    </div>
-
-                    <div class="border-top pb-3 pt-3 d-flex justify-content-end gap-2">
-                        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success " data-bs-dismiss="modal">Save changes</button>
-                    </div>
+              </div>
+              <div class="modal-body">
+                <form class="modal-form">
+                  <div class="form-group">
+                    <label class="form-label">Username <span class="required">*</span></label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Password <span class="required">*</span></label>
+                    <input type="password" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Confirm Password <span class="required">*</span></label>
+                    <input type="password" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Name <span class="required">*</span></label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Role <span class="required">*</span></label>
+                    <select class="form-select" required>
+                      <option value="">Select role...</option>
+                      <option value="1">Admin</option>
+                      <option value="2">Staff</option>
+                      <option value="3">Technician</option>
+                    </select>
+                  </div>
                 </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Add User</button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
 
-
-<!-- USER EDIT MODAL -->
-
-<div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="viewDetailsLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="viewDetailsLabel">Edit User</h1>
+        <!-- EDIT USER MODAL -->
+        <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="editUserLabel">Edit User</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body pe-2">
-                <form class="row g-3">
-                    <div>
-                        <label for="Name">Name <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control">
+              </div>
+              <div class="modal-body">
+                <form class="modal-form">
+                  <div class="form-group">
+                    <label class="form-label">Name <span class="required">*</span></label>
+                    <input type="text" class="form-control" value="Mark Jhon">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Role <span class="required">*</span></label>
+                    <select class="form-select">
+                      <option value="1" selected>Admin</option>
+                      <option value="2">Staff</option>
+                      <option value="3">Technician</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label d-block">Status <span class="required">*</span></label>
+                    <div class="form-check form-switch status-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="userSwitchChecked" checked data-bs-toggle="collapse" data-bs-target=".status-toggle">
+                      <label class="form-check-label" for="userSwitchChecked">
+                        <span class="collapse show status-toggle status-text-active">Active</span>
+                        <span class="collapse status-toggle status-text-inactive">Inactive</span>
+                      </label>
                     </div>
-                    <div>
-                        <label for="Name">Role <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <!-- SWITCH -->
-                    <div class="mb-3">
-                            <label class="form-label d-block" for="userSwitchChecked">
-                            Status <span class="text-danger">*</span>
-                        </label>
-
-                        <div class="form-check form-switch d-flex align-items-center">
-                                <input class="form-check-input me-2" type="checkbox" role="switch" id="userSwitchChecked"
-                                data-bs-toggle="collapse" data-bs-target=".status-toggle">
-
-                            <span class="collapse  status-toggle text-success fw-semibold"
-                                data-bs-parent="body">Active</span>
-                            <span class="collapse show status-toggle text-danger fw-semibold"
-                                data-bs-parent="body">Inactive</span>
-                        </div>
-                    </div>
-
-                    <div class="border-top pb-3 pt-3 d-flex justify-content-end gap-2">
-                        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success " data-bs-dismiss="modal">Save changes</button>
-                    </div>
+                  </div>
                 </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+
       </div> <!-- End of Card Section -->
     </div> <!-- End of Container -->
   </div> <!-- End of Main Content -->
