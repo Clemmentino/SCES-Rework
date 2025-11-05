@@ -1,15 +1,14 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$db_username = "root";
+$db_password = "";
 $database ="smart_campus_energy_saver";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password,$database);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+try {
+  // Create connection
+  $conn = new mysqli($servername, $db_username, $db_password, $database);
+} catch (mysqli_sql_exception) {
+    die("Connection failed");
 }
 // echo "Connected successfully";
 ?>
