@@ -42,7 +42,7 @@
         </div>
         <!-- Logout Button -->
         <div>
-            <a href="../../index.php" class="btn btn-outline-danger">
+            <a href="../operations/logout.php" class="btn btn-outline-danger">
                 <i class="bi bi-box-arrow-right me-2"></i>Log Out
             </a>
         </div>

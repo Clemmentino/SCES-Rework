@@ -17,7 +17,7 @@ $role = $_SESSION['role'] ?? 'staff'; // Default role for testing, change as nee
 
     <div class="nav-items">
 
-      <?php if ($role === 'admin' || $role === 'technician') : ?>
+      <?php if ($role === 'Admin' || $role === 'Technician') : ?>
       <div class="nav-item" data-target="dashboard">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-columns-gap"
           viewBox="-1.7 -0.4 20 17">
@@ -28,7 +28,7 @@ $role = $_SESSION['role'] ?? 'staff'; // Default role for testing, change as nee
       </div>
       <?php endif; ?>
 
-      <?php if ($role === 'admin' || $role === 'staff') : ?>
+      <?php if ($role === 'Admin' || $role === 'Staff') : ?>
       <div class="nav-item" data-target="reports">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
           class="bi bi-file-earmark-text" viewBox="0 0 16 16">
@@ -41,7 +41,7 @@ $role = $_SESSION['role'] ?? 'staff'; // Default role for testing, change as nee
       </div>
       <?php endif; ?>
 
-      <?php if ($role === 'admin' || $role === 'staff' || $role === 'technician') : ?>
+      <?php if ($role === 'Admin' || $role === 'Staff' || $role === 'technician') : ?>
       <div class="nav-item" data-target="controlPanel">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2"
           viewBox="0 0 16 16">
@@ -54,7 +54,7 @@ $role = $_SESSION['role'] ?? 'staff'; // Default role for testing, change as nee
       </div>
       <?php endif; ?>
 
-      <?php if ($role === 'admin') : ?>
+      <?php if ($role === 'Admin') : ?>
       <div class="nav-item" data-target="usersPanel">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people"
           viewBox="0 0 16 16">
