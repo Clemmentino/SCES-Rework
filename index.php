@@ -1,4 +1,7 @@
-<?php include 'auth/authentication.php'; ?>
+<?php
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +42,7 @@
                                         </div>
                                     <?php endif; ?>
 
-                                    <form method="POST" action="" class="needs-validation" novalidate>
+                                    <form method="POST" action="auth/checkuser.php" class="needs-validation">
                                         <div class="mb-3">
                                             <input type="text" name="username" class="form-control" placeholder="Username" required />
                                         </div>
