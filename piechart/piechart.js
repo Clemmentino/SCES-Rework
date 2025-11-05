@@ -66,12 +66,6 @@ const totalComputers = (labComputers * computerKwh * 2);
 // ===== CHART DATA =====
 const data = {
   labels: [
-    //'Floor 1 - Academic Building',
-    //'Floor 2 - Academic Building',
-    //'Floor 3 - Academic Building',
-    //'Floor 4 - Academic Building',
-   // 'Room 1 - Laboratory AB 3-1',
-    //'Room 2 - Laboratory AB 3-2',
     'Wall Fans',
     'Entertainment',
     'HVAC Systems',
@@ -81,12 +75,6 @@ const data = {
   datasets: [{
     label: 'Daily Energy Consumption (kWh)',
     data: [
-     // floorTotal,         // Floor 1
-      //floorTotal,         // Floor 2
-     // floorTotal,         // Floor 3
-     // floorTotal,         // Floor 4
-      //labTotal,           // Lab 1
-      //labTotal,           // Lab 2
       totalFans,          // All fans
       totalEntertainment, // All TVs
       totalHVAC,          // All aircons
@@ -184,6 +172,11 @@ function updateDeviceStatus() {
 
 // ===== INIT =====
 window.addEventListener('load', () => {
+  // Disable animation if on mobile (optimization)
+  if (window.innerWidth <= 768) {
+    config.options.animation = false;
+  }
+
   new Chart(document.getElementById('pieChart'), config);
   updateTotal();
   updateDeviceStatus();
