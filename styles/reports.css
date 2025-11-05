@@ -1,0 +1,74 @@
+
+.card-section #reports .card table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  word-wrap: break-word;
+}
+
+.card-section #reports .card table th,
+.card-section #reports .card table td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.card-section #reports .card.p-2 {
+  overflow-x: auto;
+}
+
+.main-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 100%;
+}
+
+.resolveStatus {
+  background-color: #006f14;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+
+.unresolveStatus {
+  background-color: #d53434;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+
+.pendingStatus {
+  background-color: #e0e319;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+
+  .card-section #reports .btn-outline-success {
+    padding: 3px 8px;
+    font-size: 0.8rem;
+  }
+
+  .card-section #reports th, 
+  .card-section #reports td {
+    font-size: 0.9rem;
+  }
+
+  .card-section #reports .table {
+    font-size: 0.9rem;
+  }
+}

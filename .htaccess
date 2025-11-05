@@ -1,0 +1,13 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Make sure the base matches your project folder name
+RewriteBase /SCES-Rework/
+
+# Redirect requests without file extensions to the corresponding PHP file
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Optional: remove trailing slashes (for clean URLs)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [L,R=301]

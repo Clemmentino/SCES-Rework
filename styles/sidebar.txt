@@ -147,3 +147,98 @@
 body.sidebar-expanded .main-content {
   margin-left: 260px;
 }
+
+/* ===== MOBILE BOTTOM NAVBAR ===== */
+@media (max-width: 767px) {
+  /* Hide desktop sidebar completely on mobile */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* Bottom navbar container */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    padding: 10px 15px;
+    background: var(--panel-bg);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+  }
+
+  /* Mobile nav items - matching desktop .nav-item styling */
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    min-width: 60px;
+  }
+
+  .mobile-nav-item:hover {
+    background: var(--panel-hover);
+    transform: translateY(-3px);
+  }
+
+  .mobile-nav-item.active {
+    background: var(--bs-primary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-nav-item svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: var(--bs-primary);
+    transition: transform 0.3s ease, fill 0.3s ease;
+  }
+
+  .mobile-nav-item:hover svg {
+    transform: scale(1.15);
+  }
+
+  .mobile-nav-item.active svg {
+    fill: var(--white);
+  }
+
+  .mobile-nav-item span {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    text-align: center;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav-item.active span {
+    color: var(--white);
+  }
+
+  /* Adjust main content for mobile */
+  .main-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 90px; /* Space for bottom nav */
+  }
+}
+
+/* Keep desktop sidebar visible on larger screens */
+@media (min-width: 768px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+}
