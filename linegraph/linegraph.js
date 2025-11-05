@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
         varElem.textContent = `${variance.toLocaleString()} kWh (${variancePercent}%)`;
     }
 
-    // --- Chart ---
-    new Chart(document.getElementById('consumptionChart'), {
+    // --- Chart Configuration ---
+    const chartConfig = {
         type: 'line',
         data: {
             labels: data.hours,
@@ -62,7 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 pointHoverBorderColor: '#fff',
                 pointHoverBorderWidth: 3,
                 order: 1,
-                animation: { duration: 2000, easing: 'easeInOutQuart', delay: (ctx) => ctx.dataIndex * 100 }
+                animation: { 
+                    duration: 2000, 
+                    easing: 'easeInOutQuart', 
+                    delay: (ctx) => ctx.dataIndex * 100 
+                }
             }, {
                 label: 'Threshold Limit (400 kWh)',
                 data: Array(17).fill(400),
@@ -132,5 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             interaction: { intersect: false, mode: 'index' }
         }
-    });
+    };
+
+    // 🔋 Disable animation if on mobile (optimization)
+    if (window.innerWidth <= 768) {
+        chartConfig.options.animation = false;
+        chartConfig.data.datasets.forEach(ds => ds.animation = false);
+    }
+
+    // --- Initialize Chart ---
+    new Chart(document.getElementById('consumptionChart'), chartConfig);
 });

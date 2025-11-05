@@ -23,7 +23,6 @@
 
   <!-- Scripts -->
   <script src="../../scripts/dashboard.js" defer></script>
-  <script src="../../scripts/accountPanel.js" defer></script>
   <script src="../../scripts/filterBar.js" defer></script>
   <script src="../../scripts/sidebar.js" defer></script>
 

@@ -31,15 +31,6 @@
       </select>
     </div>
 
-    <!-- Data Mode -->
-    <div class="col-12 col-sm-6 col-lg-2">
-      <label class="form-label mb-1 fw-semibold">Data Mode</label>
-      <select class="form-select form-select-sm">
-        <option>Real-time</option>
-        <option>Historical</option>
-      </select>
-    </div>
-
     <!-- Time Period -->
     <div class="col-12 col-sm-6 col-lg-2">
       <label class="form-label mb-1 fw-semibold">Time Period</label>
@@ -48,6 +39,7 @@
         <option>Yesterday</option>
         <option>This Week</option>
         <option>This Month</option>
+        <option>This Year</option>
       </select>
     </div>
 
