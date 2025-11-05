@@ -1,3 +1,11 @@
+<?php
+session_start();
+$username = $_SESSION['user'];
+if(!isset($_SESSION['user'])){
+  $error = "You are not yet logged in.";
+  header("location: ../../index.php?$error");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

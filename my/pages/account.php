@@ -1,3 +1,11 @@
+<?php
+session_start();
+$username = $_SESSION['user'];
+if(!isset($_SESSION['user'])){
+  $error = "You are not yet logged in.";
+  header("location: ../../index.php?$error");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +50,7 @@
                 </div>
                 <!-- Logout Button -->
                 <div>
-                    <a href="../operations/logout.php" class="btn btn-outline-danger">
+                    <a href="../../operations/logout.php" class="btn btn-outline-danger">
                         <i class="bi bi-box-arrow-right me-2"></i>Log Out
                     </a>
                 </div>
