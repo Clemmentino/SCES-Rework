@@ -25,7 +25,6 @@ if ($query->num_rows > 0) {
                 $redirectPath = "../my/pages/dashboard.php";
                 break;
             case 'Staff':
-                $redirectPath = "../my/pages/dashboard.php";
                 break;
             case 'Technician':
                 $redirectPath = "../my/pages/dashboard.php";
