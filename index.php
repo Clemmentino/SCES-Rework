@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$error = $_GET['error'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ session_start();
     <!-- Latest compiled JavaScript -->
     <script src="bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
-    <script defer src="script/script.js"></script>
+    <script defer src="scripts/script.js"></script>
 </head>
 <body>
     <div>
@@ -36,8 +36,8 @@ session_start();
                                         <h5 class="mt-3 fw-bold">Welcome Back!</h5>
                                     </div>
 
-                                    <?php if (isset($error)): ?>
-                                        <div class="alert alert-danger" role="alert">
+                                    <?php if ($error): ?>
+                                        <div class="alert alert-danger p-2 " role="alert">
                                             <?php echo htmlspecialchars($error); ?>
                                         </div>
                                     <?php endif; ?>
@@ -51,9 +51,7 @@ session_start();
                                         </div>
                                         <button type="submit" class="btn btn-success w-50 rounded-3 py-2">Log in</button>
                                     </form>
-                                    <div class="text-start mt-2">
-                                        <a href="#" class="lost-password-link">Lost password?</a><br />
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

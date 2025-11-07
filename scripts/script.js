@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         event.stopPropagation();
       }
-      // If valid, form will submit normally to PHP
+
     }, false);
   });
 

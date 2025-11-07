@@ -1,9 +1,7 @@
-
 :root {
   --bs-primary: #176627 !important;
   --bs-primary-rgb: 23, 102, 39 !important;
 }
-
 
 .btn-primary {
   background-color: var(--bs-primary) !important;
@@ -17,7 +15,6 @@
 .bg-primary {
   background-color: var(--bs-primary) !important;
 }
-
 
 body {
   background: url("../img/Smart Campus Energy System_page-0003.jpg") center center / cover no-repeat;
@@ -48,7 +45,6 @@ body {
   background-color: #176627;
 }
 
-
 .was-validated .form-control:valid,
 .was-validated .form-control:invalid {
   background-image: none !important;
@@ -56,32 +52,62 @@ body {
   background-position: unset !important;
 }
 
-
 .was-validated .form-control:valid {
   border-color: #228B22 !important; 
   box-shadow: 0 0 5px rgba(34, 139, 34, 0.4);
 }
-
 
 .was-validated .form-control:invalid {
   border-color: #dc3545 !important; 
   box-shadow: 0 0 5px rgba(220, 53, 69, 0.4);
 }
 
-
 .form-control:focus {
   border-color: #228B22 !important; 
   box-shadow: 0 0 5px rgba(34, 139, 34, 0.4);
 }
 
-.lost-password-link {
-  color: #1d7030;                
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-size: 14px;
+
+
+@media (max-width: 768px) {
+  .login-box {
+    width: 100%;
+    padding: 1rem;
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .login-image {
+    display: none !important;
+  }
+
+  .form-control,
+  .btn,
+  .lost-password-link {
+    font-size: 0.85rem !important;
+  }
+
+  .btn {
+    padding: 0.45rem 0.8rem;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-size: 0.9em;
+  }
 }
 
-.lost-password-link:hover {
-  text-decoration: underline;
-  color: #155d26;
+@media (max-width: 480px) {
+  .login-box {
+    padding: 0.8rem;
+  }
+
+  .form-control {
+    font-size: 0.8rem !important;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.5rem;
+  }
 }
+
