@@ -18,14 +18,15 @@ if ($query->num_rows > 0) {
     $_SESSION['user'] = $username;
     $_SESSION['name'] = $row['name'];
     $_SESSION['role'] = $row['role'];
-    
+    $_SESSION['user_ID'] = $row['user_ID'];
+
     if(isset($_SESSION['role'])){
         switch($_SESSION['role']){
             case 'Admin':
                 $redirectPath = "../my/pages/dashboard.php";
                 break;
             case 'Staff':
-                $redirectPath = "../my/pages/dashboard.php";
+                $redirectPath = "../my/pages/reports.php";
                 break;
             case 'Technician':
                 $redirectPath = "../my/pages/dashboard.php";

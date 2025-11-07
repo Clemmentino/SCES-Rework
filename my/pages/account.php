@@ -74,16 +74,18 @@ if(!isset($_SESSION['user'])){
                   <!-- Name and Title with Edit Button -->
                   <div class="col-md-4">
                     <div class="d-flex align-items-center gap-2 mb-1">
-                      <h5 class="profile-name mb-0" id="displayName">Clemmentino Amoguis</h5>
+                      <h5 class="profile-name mb-0" id="displayName">
+                        <?php echo htmlspecialchars($_SESSION['name']); ?>
+                      </h5>
                       <button class="btn btn-sm btn-light rounded-circle p-1 edit-btn" 
                               data-bs-toggle="modal" data-bs-target="#editProfileModal">
                         <i class="bi bi-pencil"></i>
                       </button>
                     </div>
                     <p class="profile-title mb-0">
-                      <span class="badge-role">Admin</span>
-                      <span class="profile-divider">|</span>
-                      <span class="profile-department">Academic Building</span>
+                      <span class="badge-role">
+                        <?php echo htmlspecialchars($_SESSION['role']); ?>
+                      </span>
                     </p>
                   </div>
                   
@@ -201,7 +203,8 @@ if(!isset($_SESSION['user'])){
                 </div>
                 <div class="mb-3">
                   <label for="nameInput" class="form-label">Full Name</label>
-                  <input type="text" class="form-control" id="nameInput" value="Clemmentino Amoguis ">
+                  <input type="text" class="form-control" id="nameInput"
+                    value="<?php echo htmlspecialchars($_SESSION['name']); ?>" readonly>
                 </div>
               </div>
               <div class="modal-footer border-0">

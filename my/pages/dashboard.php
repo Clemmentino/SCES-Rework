@@ -52,7 +52,7 @@ if(!isset($_SESSION['user'])){
       <div class="card-section active" id="dashboard">
                 <!-- Greeting Section -->
         <div class="top-header pt-1 pb-3 mt-2">
-          <h4 class="fw-bold">Hello, Clemm! 👋</h4>
+          <h4 class="fw-bold">Hello, <?php echo htmlspecialchars($_SESSION['name']); ?> 👋</h4>
           <p class="text-muted small mb-3 mb-md-4">What are you looking for today?</p>
           <?php include '../../components/filterBar.php'; ?>
         </div>

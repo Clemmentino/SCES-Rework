@@ -1,6 +1,7 @@
 <?php
 session_start();
 $username = $_SESSION['user'];
+$role = $_SESSION['role'];
 if(!isset($_SESSION['user'])){
   $error = "You are not yet logged in.";
   header("location: ../../index.php?$error");
@@ -42,10 +43,16 @@ if(!isset($_SESSION['user'])){
     <div class="container-fluid px-md-2">
       <div class="card-section active" id="reports">
         <div class="mt-3">
+          <div>
+            <?php if ($role === 'Staff') : ?>
+              <div class="top-header pt-1 pb-2 mt-2">
+                <h4 class="fw-bold">Hello, <?php echo htmlspecialchars($_SESSION['name']); ?> 👋</h4>
+                <p class="text-muted small mb-3 mb-md-0">What are you looking for today?</p>
+              </div>
+            <?php endif; ?>
+          </div>
           <div class="d-flex align-items-center position-relative">
-            <div>
-              <h4 class="mb-0 fw-bold">Report Panel</h4>
-            </div>
+            <h4 class="mb-0 fw-bold">Report Panel</h4>
             <!-- Button trigger modal -->
             <div class="ms-auto">
               <button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#addReport">
